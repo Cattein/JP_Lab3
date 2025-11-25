@@ -20,7 +20,8 @@ public class Calculator {
 
         textField = new JTextField();
          frame.getContentPane().add(BorderLayout.NORTH, textField);
-         frame.getContentPane().add(panel);
+        textField.setHorizontalAlignment(JTextField.RIGHT);
+        frame.getContentPane().add(panel);
         textField.setEditable(false);
 
 
