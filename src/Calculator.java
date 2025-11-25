@@ -21,6 +21,8 @@ public class Calculator {
         textField = new JTextField();
          frame.getContentPane().add(BorderLayout.NORTH, textField);
          frame.getContentPane().add(panel);
+        textField.setEditable(false);
+
 
         JButton button7 = new JButton("7");
         JButton button8 = new JButton("8");
