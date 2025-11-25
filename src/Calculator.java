@@ -1,10 +1,13 @@
 import javax.swing.*;
 import javax.swing.text.StyledEditorKit;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class Calculator {
     private static JTextField textField;
+    private static boolean FirstNumber = true;
 
 
     public static void main(String[] args) {
@@ -56,15 +59,72 @@ public class Calculator {
         panel.add(buttonEquals);
         panel.add(buttonPlus);
 
-
-
-
-
-
-
-
+        button0.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("0");
+            }
+        });
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("1");
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("2");
+            }
+        });
+        button3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("3");
+            }
+        });
+        button4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("4");
+            }
+        });
+        button5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("5");
+            }
+        });
+        button6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("6");
+            }
+        });
+        button7.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("7");
+            }
+        });
+        button8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("8");
+            }
+        });
+        button9.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addToDisplay("9");
+            }
+        });
 
          frame.setVisible(true);
 
     }
+
+    private static void addToDisplay(String digit) {
+        if (FirstNumber) {
+            FirstNumber = false;
+            textField.setText(digit);
+        } else {
+            textField.setText(textField.getText() + digit);
+        }
+    }
+
+
+
+
+
 }
