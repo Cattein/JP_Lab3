@@ -19,5 +19,8 @@ public class Calculator {
          frame.getContentPane().add(BorderLayout.NORTH, textField);
          frame.getContentPane().add(panel);
 
+
+         JButton numberSystem = new JButton("1");
+         panel.add(numberSystem);
     }
 }
