@@ -7,8 +7,9 @@ import java.awt.event.ActionListener;
 
 public class Calculator {
     private static JTextField textField;
-    private static boolean FirstNumber = true;
-
+    private static boolean Not = true;
+    private static double FirstNumber = 0;
+    private static String operator = "";
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
@@ -37,7 +38,6 @@ public class Calculator {
         JButton buttonMultiplication = new JButton("*");
         JButton buttonDivision = new JButton("/");
         JButton buttonEquals = new JButton("=");
-        JButton buttonClear = new JButton("C");
 
         panel.add(button7);
         panel.add(button8);
@@ -55,7 +55,6 @@ public class Calculator {
         panel.add(buttonMinus);
 
         panel.add(button0);
-        panel.add(buttonClear);
         panel.add(buttonEquals);
         panel.add(buttonPlus);
 
@@ -110,18 +109,99 @@ public class Calculator {
             }
         });
 
+        buttonPlus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                setOperator("+");
+            }
+        });
+        buttonMinus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setOperator("-");
+            }
+        });
+        buttonMultiplication.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setOperator("*");
+            }
+        });
+        buttonDivision.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setOperator("/");
+            }
+        });
+
+
+
+
+
+
+        buttonEquals.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Result();
+            }
+        });
+
+
          frame.setVisible(true);
 
     }
 
     private static void addToDisplay(String digit) {
-        if (FirstNumber) {
-            FirstNumber = false;
+        if (Not) {
+            Not = false;
             textField.setText(digit);
         } else {
             textField.setText(textField.getText() + digit);
         }
     }
+    private static void setOperator(String Operation) {
+        String window = textField.getText();
+        if (!window.isEmpty()) {
+            FirstNumber = Double.parseDouble(window);
+            Not = true;
+            operator = Operation;
+        }
+    }
+
+    private static void Result(){
+        String window = textField.getText();
+        if (operator.isEmpty() || window.isEmpty()) {
+            return;
+        }
+
+        double secondNumber = Double.parseDouble(window);
+        double result = 0;
+
+        switch (operator) {
+            case "+":
+                result = FirstNumber + secondNumber;
+                break;
+            case "-":
+                result = FirstNumber - secondNumber;
+                break;
+            case "*":
+                result = FirstNumber * secondNumber;
+                break;
+            case "/":
+                if (secondNumber == 0) {
+                    textField.setText("Error");
+                    operator = "";
+                    Not = true;
+                    return;
+                }
+                result = FirstNumber / secondNumber;
+                break;
+        }
+
+        textField.setText(String.valueOf(result));
+        operator = "";
+        Not = true;
+
+    }
+
 
 
 
