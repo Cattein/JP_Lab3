@@ -38,10 +38,13 @@ public class Task_1  {
             public void actionPerformed(ActionEvent e) {
                 String login = nameField.getText();
                 String password = new String(passwordField.getPassword());
-
+                textArea.append("*-*-*-*-*-*-*-*-*-*-"+ "\n");
                 textArea.append("Login - " + login + "\n");
                 textArea.append("Password - " + password + "\n");
+                textArea.append("*-*-*-*-*-*-*-*-*-*-"+"\n");
 
+                nameField.setText("");
+                passwordField.setText("");
             }
         });
 
