@@ -14,15 +14,25 @@ public class Task_2 extends JFrame {
         setContentPane(Panel);
 
         JPanel nextWindow = new JPanel(null);
-        Panel.add(nextWindow, java.awt.BorderLayout.CENTER);
 
         obj = new JLabel(":)");
         obj.setHorizontalAlignment(SwingConstants.CENTER);
         obj.setBounds(200, 100, 200, 50);
 
+        JPanel buttonsPanel = new JPanel(new java.awt.FlowLayout());
 
+        JButton ButtonColor = new JButton("Color");
+        JButton ButtonSize  = new JButton("Size");
+        JButton ButtonMove  = new JButton("Position");
 
+        Panel.add(nextWindow, java.awt.BorderLayout.CENTER);
         nextWindow.add(obj);
+        Panel.add(buttonsPanel, java.awt.BorderLayout.SOUTH);
+
+        buttonsPanel.add(ButtonColor);
+        buttonsPanel.add(ButtonSize);
+        buttonsPanel.add(ButtonMove);
+
 
     }
 
