@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Task_1  {
 
@@ -30,6 +32,18 @@ public class Task_1  {
         panel.add(passwordField);
         panel.add(sendButton);
         panel.add(textArea);
+
+        sendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String login = nameField.getText();
+                String password = new String(passwordField.getPassword());
+
+                textArea.append("Login - " + login + "\n");
+                textArea.append("Password - " + password + "\n");
+
+            }
+        });
 
         frame.setVisible(true);
 
