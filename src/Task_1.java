@@ -21,13 +21,15 @@ public class Task_1  {
         JPasswordField passwordField = new JPasswordField(10);
 
         JButton sendButton = new JButton("Enter");
-
+        JTextArea textArea = new JTextArea(5, 30);
+        textArea.setEditable(false);
 
         panel.add(nameLabel);
         panel.add(nameField);
         panel.add(passwordLabel);
         panel.add(passwordField);
         panel.add(sendButton);
+        panel.add(textArea);
 
         frame.setVisible(true);
 
