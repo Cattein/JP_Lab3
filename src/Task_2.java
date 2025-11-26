@@ -42,7 +42,10 @@ public class Task_2 extends JFrame {
         });
 
 
-
+        ButtonSize.addActionListener(e -> {
+            String name = JOptionPane.showInputDialog("Enter size:");
+            obj.setSize(Integer.parseInt(name),Integer.parseInt(name));
+        });
 
 
 
