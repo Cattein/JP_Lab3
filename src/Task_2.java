@@ -48,8 +48,13 @@ public class Task_2 extends JFrame {
         });
 
 
+        ButtonMove.addActionListener(e -> {
+            String x = JOptionPane.showInputDialog("Enter X:");
+            String y = JOptionPane.showInputDialog("Enter Y:");
 
+            obj.setLocation(Integer.parseInt(x),Integer.parseInt(y));
 
+        });
 
 
     }
