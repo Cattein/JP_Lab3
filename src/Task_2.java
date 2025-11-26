@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 
 public class Task_2 extends JFrame {
@@ -16,6 +17,7 @@ public class Task_2 extends JFrame {
         JPanel nextWindow = new JPanel(null);
 
         obj = new JLabel(":)");
+        obj.setOpaque(true);
         obj.setHorizontalAlignment(SwingConstants.CENTER);
         obj.setBounds(200, 100, 200, 50);
 
@@ -32,6 +34,19 @@ public class Task_2 extends JFrame {
         buttonsPanel.add(ButtonColor);
         buttonsPanel.add(ButtonSize);
         buttonsPanel.add(ButtonMove);
+
+        ButtonColor.addActionListener(e -> {
+            Color color = JColorChooser.showDialog(this,
+                "Select a color", obj.getBackground());
+            obj.setBackground(color);
+        });
+
+
+
+
+
+
+
 
 
     }
