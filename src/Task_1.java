@@ -16,13 +16,18 @@ public class Task_1  {
 
 
         JLabel nameLabel = new JLabel("Login:");
-        JLabel passwordLabel = new JLabel("Hasło:");
+        JLabel passwordLabel = new JLabel("Password:");
         JTextField nameField = new JTextField(10);
         JPasswordField passwordField = new JPasswordField(10);
+
+        JButton sendButton = new JButton("Enter");
+
+
         panel.add(nameLabel);
         panel.add(nameField);
         panel.add(passwordLabel);
         panel.add(passwordField);
+        panel.add(sendButton);
 
         frame.setVisible(true);
 
