@@ -4,9 +4,6 @@ import java.awt.event.ActionListener;
 
 public class Task_1  {
 
-    public Task_1() {
-
-    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Prosta aplikacja");
